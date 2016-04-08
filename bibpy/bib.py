@@ -49,7 +49,7 @@ class Parser() :
         self.data = data    
         self.token = None
         self.token_type = None
-        self._next_token = self.tokenize().next
+        self._next_token = self.tokenize().__next__
         self.hashtable = {}
         self.mode = None
         self.records = {}        
@@ -261,4 +261,4 @@ class Parser() :
     
     def json(self) :
         """Returns json formated records"""
-        return json.dumps({'items':self.records.values()})
+        return json.dumps({'items':list(self.records.values())})

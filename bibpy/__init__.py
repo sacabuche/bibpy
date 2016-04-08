@@ -1,1 +1,1 @@
-from bib import *
+from .bib import *
